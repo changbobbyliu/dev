@@ -1,7 +1,8 @@
 import e from "enquirer";
 import { decryptJWE } from "./jwe";
+import { execSync } from "child_process";
 
-const options = ["jwe", "exit"] as const;
+const options = ["jwe", "run", "exit"] as const;
 type TOption = typeof options[number];
 
 class Command {
@@ -20,6 +21,10 @@ const commandMap: { [key: string]: Command } = {
       message: "Enter a JWE token to decrypt",
     });
     await decryptJWE(jweToken);
+  }),
+  run: new Command("run", "Run a command", async () => {
+    const stdout = execSync("ls -la", { encoding: "utf-8" });
+    console.log(stdout);
   }),
   exit: new Command("exit", "Exit the program", async () => {
     process.exit(0);
