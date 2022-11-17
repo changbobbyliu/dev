@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 
+import { Text } from "@/ui/components/Text.component";
+
 export default function Home() {
   return (
     <>
@@ -10,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container mx-auto">
-        <h1 className="my-1 font-bold">boobar.eth</h1>
+        <Text>boobar.eth</Text>
         <Image src="/logo-full.png" alt="logo" width={200} height={200} />
       </main>
     </>
