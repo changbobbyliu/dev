@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
+import ethereumSVG from "@/assets/ethereum.svg";
 
 import { Text } from "@/ui/components/Text.component";
+import { Card } from "@/ui/components/Card.component";
 
 export default function Home() {
   return (
@@ -13,7 +14,11 @@ export default function Home() {
       </Head>
       <main className="container mx-auto">
         <Text>boobar.eth</Text>
-        <Image src="/logo-full.png" alt="logo" width={200} height={200} />
+        <Card
+          title="ChitChat"
+          subtitle="You have a new message!"
+          leftIcon={ethereumSVG}
+        />
       </main>
     </>
   );
