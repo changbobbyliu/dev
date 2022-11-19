@@ -25,6 +25,7 @@
     // ts-node use CommonJS module
     "compilerOptions": {
       "module": "commonjs"
-    }
+    },
+    "files": true // use namespace in .d.ts. Ref: https://stackoverflow.com/a/65564218
   }
 }
