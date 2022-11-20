@@ -1,9 +1,7 @@
 import e from "enquirer";
-import { options, commands, commandMap } from "./commands";
+import { options, commandMap } from "./commands";
 
 async function main() {
-  console.table(commands, ["name", "description"]);
-
   const answers = await e.prompt<{ choice: NSBin.TOption }>({
     type: "autocomplete",
     name: "choice",
@@ -14,7 +12,7 @@ async function main() {
   const command = commandMap.get(answers.choice);
   if (!command) throw new Error("Invalid command");
   await command.exec();
-  console.log("\n\n");
+  console.log("");
 }
 
 (async () => {

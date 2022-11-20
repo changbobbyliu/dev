@@ -1,9 +1,14 @@
 import { execSync } from "child_process";
 import { command as jweCommand } from "./jwe";
 
-export const options = ["jwe", "run", "exit"] as const;
+export const options = ["help", "jwe", "run", "exit"] as const;
 
 export const commands: NSBin.TCommand[] = [
+  {
+    name: "help",
+    description: "Show available commands",
+    exec: async () => console.table(commands, ["name", "description"]),
+  },
   jweCommand,
   {
     name: "run",
