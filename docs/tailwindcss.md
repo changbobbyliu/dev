@@ -2,15 +2,24 @@
 
 ### [tailwindcss + prettier](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 
+### VSCode Plugin Setting
+
+```json
+// <Button containerClassName="py-4"> intellisense
+"tailwindCSS.classAttributes": ["containerClassName"]
+```
+
+## Classes
+
 ### [space-x-4](https://tailwindcss.com/docs/space)
 
 children space in between
 
 ```css
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+	--tw-space-x-reverse: 0;
+	margin-right: calc(1rem * var(--tw-space-x-reverse));
+	margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 ```
 
@@ -63,8 +72,8 @@ ARIA Attributes
 
 ```css
 aria-checked: xx <th aria-sort= "ascending" class=
-  "aria-[sort=ascending]:bg-[url('/img/down-arrow.svg')] aria-[sort=descending]:bg-[url('/img/up-arrow.svg')]"
-  >;
+	"aria-[sort=ascending]:bg-[url('/img/down-arrow.svg')] aria-[sort=descending]:bg-[url('/img/up-arrow.svg')]"
+	>;
 ```
 
 Data attributes
