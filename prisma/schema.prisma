@@ -10,14 +10,13 @@ datasource db {
 }
 
 model User {
-  id             String          @id
-  role           User_role       @default(USER)
-  email          String          @unique
-  name           String?
-  balance        BigInt          @default(0)
-  userSettingsId String          @unique
-  userSettings   UserSettings?
-  likedPosts     UserLikedPost[]
+  id           String          @id @default(cuid())
+  role         User_role       @default(USER)
+  email        String          @unique
+  name         String?
+  balance      BigInt          @default(0)
+  userSettings UserSettings?
+  likedPosts   UserLikedPost[]
 }
 
 model Post {
@@ -28,23 +27,22 @@ model Post {
   title     String
   content   String?
   authorId  String
-  userId    String?
   likedBy   UserLikedPost[]
 
-  @@index([updatedAt])
+  @@index([updatedAt(sort: Desc)])
 }
 
 model UserLikedPost {
-  post   Post   @relation(fields: [postId], references: [id])
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
   postId Int
-  user   User   @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String
 
   @@id([postId, userId])
 }
 
 model UserSettings {
-  id           String  @id
+  id           String  @id @default(cuid())
   userId       String  @unique
   emailUpdates Boolean @default(false)
   user         User    @relation(fields: [userId], references: [id], onDelete: Cascade)

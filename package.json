@@ -9,6 +9,9 @@
     "lint": "next lint",
     "cli": "ts-node bin/main.ts"
   },
+  "prisma": {
+    "seed": "ts-node --transpile-only prisma/seed.ts"
+  },
   "dependencies": {
     "@prisma/client": "4.6.1",
     "@types/node": "18.11.9",
