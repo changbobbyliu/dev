@@ -2,6 +2,7 @@ import Head from "next/head";
 import ethereumSVG from "@/assets/ethereum.svg";
 
 import { Button, Text, Card } from "@/ui/components";
+import { DiscordLoginButton } from "@/ui/widgets/auth/DiscordLoginButton";
 
 export default function Home() {
 	return (
@@ -18,8 +19,8 @@ export default function Home() {
 				</div>
 				<h1 className="font-bold uppercase text-gray-800 text-lg">Test CTA</h1>
 				<div className="flex py-2 space-x-2">
-					<Button title="Click me!" action={() => alert("Clicked!")} containerClassName="bg-" />
 					<Button title="Click me!" action={() => alert("Clicked!")} />
+					<DiscordLoginButton />
 				</div>
 			</main>
 		</>
