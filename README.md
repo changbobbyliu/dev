@@ -6,3 +6,7 @@
 - [**cli**](./docs/cli.md)
 - [**tailwindcss**](./docs/tailwindcss.md)
 - [**next-auth**](./docs/next-auth.md)
+
+## APIs
+
+- [**API Doc**](./docs/api.md)
