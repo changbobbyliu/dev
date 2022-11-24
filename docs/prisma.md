@@ -159,3 +159,7 @@ xxx Int @unique(sort: Desc)
 // = and <> faster than default BTree
 @@index([value], type: Hash)
 ```
+
+## Schema change guide
+
+### [Expand and contract pattern](https://www.prisma.io/dataguide/types/relational/expand-and-contract-pattern)
