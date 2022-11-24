@@ -3,8 +3,9 @@ import ethereumSVG from "@/assets/ethereum.svg";
 
 import { Button, Text, Card } from "@/ui/components";
 import { DiscordLoginButton } from "@/ui/widgets/auth/DiscordLoginButton";
+import { NextPage } from "next";
 
-export default function Home() {
+const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 	return (
 		<>
 			<Head>
@@ -25,4 +26,6 @@ export default function Home() {
 			</main>
 		</>
 	);
-}
+};
+
+export default Home;
