@@ -22,7 +22,7 @@ pscale connect <db-name> <branch-name> # proxy DATABASE_URL for dev -> mysql://1
 
 ## [integragte w/ prisma](https://www.youtube.com/watch?v=iaHt5_hg44c)
 
-### Default VARCHAR not long enough
+### Default VARCHAR(191) not long enough
 
 ```prisma
 content   String?         @db.Text
