@@ -8,5 +8,5 @@
 	"[prisma]": {
 		"editor.defaultFormatter": "Prisma.prisma"
 	},
-	"tailwindCSS.classAttributes": ["containerClassName"]
+	"tailwindCSS.classAttributes": ["className", "containerClassName"]
 }
