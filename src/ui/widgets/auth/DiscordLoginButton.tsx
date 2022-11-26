@@ -5,11 +5,13 @@ import { Button } from "@/ui/components";
 export const DiscordLoginButton: FC = () => {
 	const { data: session, status } = useSession();
 
-	const action = useMemo(() => {
-		if (status === "loading") return undefined;
-		if (session) return signOut;
-		return signIn;
+	const { title, action }: { title: string; action?: () => void } = useMemo(() => {
+		console.log("status", status, session);
+		if (status === "loading") return { title: "Loading...", action: undefined };
+		if (status === "authenticated") return { title: "Logout", action: signOut };
+
+		return { title: "Login", action: signIn };
 	}, [status, session]);
 
-	return <Button title={session ? "Logout" : "Login"} action={action} />;
+	return <Button title={title} action={action} />;
 };
