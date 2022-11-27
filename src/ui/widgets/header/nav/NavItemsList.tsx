@@ -1,13 +1,32 @@
 import { FC } from "react";
 import styles from "../Header.module.css";
 
-export const NavItemsList: FC = () => {
+function smoothScrollTo(id: string, callback?: () => void) {
+	return () => {
+		const dom = document.getElementById(id);
+		document.documentElement.scrollTo({
+			top: dom?.offsetTop,
+			behavior: "smooth",
+		});
+		callback?.();
+	};
+}
+
+export const NavItemsList: FC<{ callback?: () => void }> = ({ callback }) => {
 	return (
 		<>
-			<li className={`${styles.menuitem}`}>Home 1</li>
-			<li className={`${styles.menuitem}`}>Home 2</li>
-			<li className={`${styles.menuitem} ${styles.active}`}>Home 3</li>
-			<li className={`${styles.menuitem}`}>Home 4</li>
+			<li
+				className={`${styles.menuitem} ${styles.active}`}
+				onClick={smoothScrollTo("home", callback)}
+			>
+				Home
+			</li>
+			<li className={`${styles.menuitem}`} onClick={smoothScrollTo("portfolio", callback)}>
+				Portfolio
+			</li>
+			<li className={`${styles.menuitem}`} onClick={smoothScrollTo("hobby", callback)}>
+				Hobby
+			</li>
 		</>
 	);
 };

@@ -10,6 +10,14 @@
 - [**thirdweb**](./docs/thirdweb.md)
 - [**react-transition-group**](./docs/react-transition-group.md)
 
+### [Intersection Observer](https://www.youtube.com/watch?v=2IbRtjez6ag)
+
+```js
+const observer = new IntersectionObserver((entries) => {
+	entries[0].target.classList.toggle("show", entry.isIntersecting);
+});
+```
+
 ## APIs
 
 - [**API Doc**](./docs/api.md)

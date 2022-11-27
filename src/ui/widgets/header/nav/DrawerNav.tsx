@@ -15,7 +15,7 @@ export const DrawerNav: FC<{ isOpen: boolean; close: () => void }> = ({ isOpen, 
 				}`}
 				onClick={(e) => e.stopPropagation()}
 			>
-				<NavItemsList />
+				<NavItemsList callback={close} />
 			</ul>
 		</div>
 	);

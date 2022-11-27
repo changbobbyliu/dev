@@ -10,6 +10,18 @@ const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 		<>
 			<Header />
 			<main className="container mx-auto px-2">
+				<div id="home" className="h-screen pt-16 bg-fuchsia-300">
+					<span>Home</span>
+				</div>
+
+				<div id="portfolio" className="h-screen pt-16 bg-lime-300">
+					<span>Portfolio</span>
+				</div>
+
+				<div id="hobby" className="h-screen pt-16 bg-rose-300">
+					<span>HOBBY</span>
+				</div>
+
 				<div className="py-4">
 					<Card title="ChitChat" subtitle="You have a new message!" leftIcon={ethereumSVG} />
 				</div>
