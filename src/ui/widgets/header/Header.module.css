@@ -3,7 +3,7 @@
 }
 
 .menuitem {
-	@apply text-center p-3 cursor-pointer hover:bg-slate-800 hover:text-white hover:brightness-125;
+	@apply text-center p-3 cursor-pointer hover:bg-slate-800 hover:text-white hover:brightness-125 md:rounded-md;
 }
 
 .menuitem.active {
