@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext", "esnext.asynciterable"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,8 +13,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    // ts-node use CommonJS module
+    "compilerOptions": {
+      "module": "commonjs"
+    },
+    "files": true // use namespace in .d.ts. Ref: https://stackoverflow.com/a/65564218
+  }
 }

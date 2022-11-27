@@ -1,0 +1,3 @@
+## Routes
+
+### GET /user/current
