@@ -6,7 +6,6 @@ export const DiscordLoginButton: FC = () => {
 	const { data: session, status } = useSession();
 
 	const { title, action }: { title: string; action?: () => void } = useMemo(() => {
-		console.log("status", status, session);
 		if (status === "loading") return { title: "Loading...", action: undefined };
 		if (status === "authenticated") return { title: "Logout", action: signOut };
 
