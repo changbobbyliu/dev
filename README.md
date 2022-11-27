@@ -8,6 +8,7 @@
 - [**tailwindcss**](./docs/tailwindcss.md)
 - [**next-auth**](./docs/next-auth.md)
 - [**thirdweb**](./docs/thirdweb.md)
+- [**react-transition-group**](./docs/react-transition-group.md)
 
 ## APIs
 
