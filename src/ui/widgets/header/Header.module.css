@@ -1,0 +1,11 @@
+.menubar {
+	@apply w-6 h-1 bg-slate-900 absolute rounded transition-transform duration-300;
+}
+
+.menuitem {
+	@apply text-center p-3 cursor-pointer hover:bg-slate-800 hover:text-white hover:brightness-125;
+}
+
+.menuitem.active {
+	@apply text-white bg-slate-800;
+}
