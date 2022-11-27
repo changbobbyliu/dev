@@ -1,9 +1,10 @@
 import Head from "next/head";
 import ethereumSVG from "@/assets/ethereum.svg";
 
-import { Button, Text, Card } from "@/ui/components";
+import { Button, Card } from "@/ui/components";
 import { DiscordLoginButton } from "@/ui/widgets/auth/DiscordLoginButton";
 import { NextPage } from "next";
+import { Header } from "@/ui/widgets/header/Header";
 
 const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 	return (
@@ -13,8 +14,8 @@ const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 				<meta name="description" content="boobar.eth" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className="container mx-auto">
-				<Text>boobar.eth</Text>
+			<Header />
+			<main className="container mx-auto px-2">
 				<div className="py-4">
 					<Card title="ChitChat" subtitle="You have a new message!" leftIcon={ethereumSVG} />
 				</div>

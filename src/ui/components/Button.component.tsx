@@ -14,7 +14,7 @@ export const Button: FC<TProps> = ({ title, action, containerClassName }) => {
 		<span
 			className={`px-4 py-2 rounded-md bg-cyan-600 shadow-sm text-white ${
 				disabled ? "bg-gray-300" : "hover:bg-cyan-500 transition-colors cursor-pointer"
-			} ${containerClassName || ""}`}
+			} ${containerClassName}`}
 			onClick={action}
 		>
 			{title}
