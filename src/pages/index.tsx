@@ -1,4 +1,3 @@
-import Head from "next/head";
 import ethereumSVG from "@/assets/ethereum.svg";
 
 import { Button, Card } from "@/ui/components";
@@ -9,11 +8,6 @@ import { Header } from "@/ui/widgets/header/Header";
 const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 	return (
 		<>
-			<Head>
-				<title>boobar.eth</title>
-				<meta name="description" content="boobar.eth" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
 			<Header />
 			<main className="container mx-auto px-2">
 				<div className="py-4">
