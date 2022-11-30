@@ -43,9 +43,10 @@ export class NavManager {
 		};
 	}
 
-	public static onScrollFinished(callback?: () => void) {
+	public static onScrollFinished(headerRef: RefObject<HTMLElement>, callback?: () => void) {
 		callback?.();
 		this.updateCurrentScrollY();
+		headerRef.current?.classList.toggle("bg-[#ffffffa0]", window.scrollY > SCROLL_Y_THRESHOLD);
 		// TODO: update selected nav item
 	}
 }
@@ -59,7 +60,7 @@ export const hooks = {
 
 				// Do not hide when scrolling by tapping NavItem in NavItemsList
 				if (!NavManager.isListeningToScroll) {
-					NavManager.onScrollFinished(() => {
+					NavManager.onScrollFinished(headerRef, () => {
 						debounceTimer = setTimeout(() => {
 							NavManager.enableScrollListener();
 						}, 200);
@@ -68,7 +69,7 @@ export const hooks = {
 				}
 
 				debounceTimer = setTimeout(() => {
-					NavManager.onScrollFinished(() => {
+					NavManager.onScrollFinished(headerRef, () => {
 						headerRef.current?.classList.toggle(
 							"md:-translate-y-16",
 							window.scrollY > NavManager.currentScrollY + SCROLL_Y_THRESHOLD

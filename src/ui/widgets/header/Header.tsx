@@ -15,10 +15,7 @@ export const Header: FC = () => {
 	hooks.useHideHeaderOnScroll(headerRef);
 
 	return (
-		<header
-			ref={headerRef}
-			className="shadow-sm fixed w-full bg-white transition-transform duration-200"
-		>
+		<header ref={headerRef} className="shadow-sm fixed w-full bg-white transition-all duration-200">
 			<div className="container mx-auto px-2 flex flex-row h-16 items-center">
 				<div className="flex items-center flex-grow">
 					<HambugerMenu open={menuOpen} setOpen={setMenuOpen} />
