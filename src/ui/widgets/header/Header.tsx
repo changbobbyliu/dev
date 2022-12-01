@@ -16,7 +16,10 @@ export const Header: FC = () => {
 	hooks.useHideHeaderOnScroll(setActiveSection, headerRef);
 
 	return (
-		<header ref={headerRef} className="shadow-sm fixed w-full bg-white transition-all duration-200">
+		<header
+			ref={headerRef}
+			className="shadow-sm fixed w-full bg-white transition-all duration-200 backdrop-blur-sm"
+		>
 			<div className="container mx-auto px-2 flex flex-row h-16 items-center">
 				<div className="flex items-center flex-grow">
 					<HambugerMenu open={menuOpen} setOpen={setMenuOpen} />
