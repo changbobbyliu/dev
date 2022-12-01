@@ -10,6 +10,7 @@ const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 		<>
 			<Header />
 			<main className="container mx-auto px-2">
+				{/* TODO: create Section component and use TNavSection as id */}
 				<div id="home" className="h-screen pt-16 bg-fuchsia-300">
 					<span>Home</span>
 				</div>
