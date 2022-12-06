@@ -12,10 +12,18 @@
 
 ### [Intersection Observer](https://www.youtube.com/watch?v=2IbRtjez6ag)
 
+Detect dom entered viewport
+
 ```js
 const observer = new IntersectionObserver((entries) => {
 	entries[0].target.classList.toggle("show", entry.isIntersecting);
 });
+```
+
+### CSS
+
+```css
+filter: drop-shadow(0 0 2em red); /* from vite scaffold */
 ```
 
 ## APIs

@@ -58,7 +58,11 @@ export class NavManager {
 	}) {
 		callback?.();
 		this.updateCurrentScrollY();
-		headerRef.current?.classList.toggle("bg-[#ffffffa0]", window.scrollY > SCROLL_Y_THRESHOLD);
+		if (window.scrollY < SCROLL_Y_THRESHOLD) {
+			headerRef.current?.classList.replace("bg-[#ffffffa0]", "bg-white");
+		} else {
+			headerRef.current?.classList.replace("bg-white", "bg-[#ffffffa0]");
+		}
 	}
 
 	public static updateActiveSection() {
