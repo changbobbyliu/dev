@@ -1,19 +1,17 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import Image from "next/image";
-import { FC, useRef, useState } from "react";
+import { FC, useState } from "react";
 import { HambugerMenu } from "./HamburgerMenu";
 import { DrawerNav } from "./nav/DrawerNav";
-import { NavItemsList, TNavSection } from "./nav/NavItemsList";
+import { NavItemsList } from "./nav/NavItemsList";
 import logo from "@/assets/logo.svg";
 import Link from "next/link";
 import { hooks } from "@/managers/NavManager";
 
 export const Header: FC = () => {
-	const [activeSection, setActiveSection] = useState<TNavSection>("home");
 	const [menuOpen, setMenuOpen] = useState(false);
-	const headerRef = useRef<HTMLElement>(null);
 
-	hooks.useHideHeaderOnScroll(setActiveSection, headerRef);
+	const { activeSection, headerRef } = hooks.useNavOnScroll();
 
 	return (
 		<header

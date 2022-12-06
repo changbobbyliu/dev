@@ -1,5 +1,5 @@
 import { TNavSection } from "@/ui/widgets/header/nav/NavItemsList";
-import { Dispatch, RefObject, SetStateAction, useEffect } from "react";
+import { Dispatch, RefObject, SetStateAction, useEffect, useRef, useState } from "react";
 
 // NavBar.height: 64px | 4rem | h-16
 // Hide on scroll threshold: 30px
@@ -75,10 +75,10 @@ export class NavManager {
 }
 
 export const hooks = {
-	useHideHeaderOnScroll: (
-		setActiveSection: Dispatch<SetStateAction<TNavSection>>,
-		headerRef: RefObject<HTMLElement>
-	) => {
+	useNavOnScroll: () => {
+		const [activeSection, setActiveSection] = useState<TNavSection>("home");
+		const headerRef = useRef<HTMLElement>(null);
+
 		useEffect(() => {
 			if (!NavManager.states.setActiveSection) {
 				NavManager.states.setActiveSection = setActiveSection;
@@ -121,5 +121,7 @@ export const hooks = {
 				clearTimeout(debounceTimer);
 			};
 		}, []);
+
+		return { activeSection, headerRef };
 	},
 };
