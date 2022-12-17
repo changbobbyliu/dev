@@ -13,6 +13,7 @@ const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 				{/* TODO: create Section component and use TNavSection as id */}
 				<div id="home" className="h-screen pt-16 bg-fuchsia-300">
 					<span>Home</span>
+					<DiscordLoginButton />
 				</div>
 
 				<div id="portfolio" className="h-screen pt-16 bg-lime-300">
@@ -29,7 +30,6 @@ const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 				<h1 className="font-bold uppercase text-gray-800 text-lg">Test CTA</h1>
 				<div className="flex py-2 space-x-2">
 					<Button title="Click me!" action={() => alert("Clicked!")} />
-					<DiscordLoginButton />
 				</div>
 			</main>
 		</>
