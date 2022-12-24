@@ -4,6 +4,7 @@ import { Button, Card } from "@/ui/components";
 import { DiscordLoginButton } from "@/ui/widgets/auth/DiscordLoginButton";
 import { NextPage } from "next";
 import { Header } from "@/ui/widgets/header/Header";
+import { Counter } from "@boobareth/react-native-ui";
 
 const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 	return (
@@ -14,6 +15,9 @@ const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 				<div id="home" className="h-screen pt-16 bg-fuchsia-300">
 					<span>Home</span>
 					<DiscordLoginButton />
+					<div className="flex">
+						<Counter title="BABA" initialCount={181} />
+					</div>
 				</div>
 
 				<div id="portfolio" className="h-screen pt-16 bg-lime-300">
