@@ -1,32 +1,34 @@
+import { NavManager } from "@/managers/NavManager";
 import { FC } from "react";
 import styles from "../Header.module.css";
 
-function smoothScrollTo(id: string, callback?: () => void) {
-	return () => {
-		const dom = document.getElementById(id);
-		document.documentElement.scrollTo({
-			top: dom?.offsetTop,
-			behavior: "smooth",
-		});
-		callback?.();
-	};
-}
+const navSections = ["home", "portfolio", "hobby"] as const;
+export type TNavSection = typeof navSections[number];
 
-export const NavItemsList: FC<{ callback?: () => void }> = ({ callback }) => {
+type TNavItemProps = {
+	section: TNavSection;
+};
+
+export const NavItemsList: FC<{ activeSection: TNavSection; callback?: () => void }> = ({
+	activeSection,
+	callback,
+}) => {
+	const NavItem: FC<TNavItemProps> = ({ section }) => {
+		return (
+			<li
+				className={`${styles.menuitem} ${section === activeSection ? styles.active : ""}`}
+				onClick={NavManager.smoothScrollTo(section, callback)!}
+			>
+				{section.toLocaleUpperCase()}
+			</li>
+		);
+	};
+
 	return (
 		<>
-			<li
-				className={`${styles.menuitem} ${styles.active}`}
-				onClick={smoothScrollTo("home", callback)}
-			>
-				Home
-			</li>
-			<li className={`${styles.menuitem}`} onClick={smoothScrollTo("portfolio", callback)}>
-				Portfolio
-			</li>
-			<li className={`${styles.menuitem}`} onClick={smoothScrollTo("hobby", callback)}>
-				Hobby
-			</li>
+			{navSections.map((section) => (
+				<NavItem key={section} section={section} />
+			))}
 		</>
 	);
 };

@@ -4,14 +4,20 @@ import { Button, Card } from "@/ui/components";
 import { DiscordLoginButton } from "@/ui/widgets/auth/DiscordLoginButton";
 import { NextPage } from "next";
 import { Header } from "@/ui/widgets/header/Header";
+import { Counter } from "@boobareth/react-native-ui";
 
 const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 	return (
 		<>
 			<Header />
 			<main className="container mx-auto px-2">
+				{/* TODO: create Section component and use TNavSection as id */}
 				<div id="home" className="h-screen pt-16 bg-fuchsia-300">
 					<span>Home</span>
+					<DiscordLoginButton />
+					<div className="flex">
+						<Counter title="BABA" initialCount={181} />
+					</div>
 				</div>
 
 				<div id="portfolio" className="h-screen pt-16 bg-lime-300">
@@ -28,7 +34,6 @@ const Home: NextPage<{ aa: string }, { xx: string }> = () => {
 				<h1 className="font-bold uppercase text-gray-800 text-lg">Test CTA</h1>
 				<div className="flex py-2 space-x-2">
 					<Button title="Click me!" action={() => alert("Clicked!")} />
-					<DiscordLoginButton />
 				</div>
 			</main>
 		</>

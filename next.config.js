@@ -1,7 +1,21 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const withPlugins = require("next-compose-plugins");
+const withTM = require("next-transpile-modules")(["@boobareth/react-native-ui"]);
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+module.exports = withPlugins([withTM], {
+	webpack: (config) => {
+		config.resolve.alias = {
+			...(config.resolve.alias || {}),
+			// Transform all direct `react-native` imports to `react-native-web`
+			"react-native$": "react-native-web",
+		};
+		config.resolve.extensions = [
+			".web.js",
+			".web.jsx",
+			".web.ts",
+			".web.tsx",
+			...config.resolve.extensions,
+		];
+		return config;
+	},
+});
