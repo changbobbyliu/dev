@@ -114,9 +114,9 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@boobareth/react-native-ui@../../rn/react-native-ui/boobareth-react-native-ui-0.1.0.tgz":
-  version "0.1.0"
-  resolved "../../rn/react-native-ui/boobareth-react-native-ui-0.1.0.tgz#3ac7b5b1b67f3332078c35c3e18355cf3f8a67f9"
+"@boobareth/react-native-ui@https://github.com/boobareth/bucket/raw/main/%40boobareth/react-native-ui/v1.tgz":
+  version "0.0.2"
+  resolved "https://github.com/boobareth/bucket/raw/main/%40boobareth/react-native-ui/v1.tgz#b78ed33f4b23fbf230d174a56dd95c13cf4ec956"
 
 "@bundlr-network/client@^0.8.8":
   version "0.8.9"
